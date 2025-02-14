@@ -49,7 +49,26 @@ public class SpellChecker {
      *  It also tracks the number of words checked (loop iterations) and
      *  prints that value out before returning.
      */
-    public boolean binarySpellCheck(String word) {
+     public boolean binarySpellCheck(String word) {
+        loopCounter = 0;
+        int leftIdx = 0;
+        int rightIdx = dictionary.size() - 1;
+
+        while (leftIdx <= rightIdx) {
+            loopCounter++;
+            int middleIdx = leftIdx + (rightIdx - leftIdx)/2;
+
+        if (dictionary.get(middleIdx).compareTo(word) > 0) {
+            rightIdx = middleIdx - 1;
+        } else if (dictionary.get(middleIdx).compareTo(word) < 0) {
+            leftIdx = middleIdx + 1;
+        } else {
+            System.out.println(dictionary.get(middleIdx));
+            System.out.println(loopCounter);
+            return true; 
+        }
+    }
+        System.out.println(loopCounter);
         return false;
     }
 
