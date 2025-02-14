@@ -41,8 +41,6 @@ public class SpellChecker {
         return false;
     }
 
-
-
     /** This uses BINARY search to find a word in dictionary and returns
      *  true if the word is in dictionary and false otherwise.
      *
